@@ -1,0 +1,5 @@
+# .clang-format
+BasedOnStyle: LLVM    # 好きな既定スタイルでOK（LLVM/Google など）
+ColumnLimit: 0       # これで自動改行しない
+ReflowComments: false        # コメントも折り返さない（任意）
+BreakStringLiterals: false   # 文字列リテラルも切らない（任意）
