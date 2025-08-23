@@ -29,7 +29,7 @@ struct net_device {
   char name[IFNAMSIZ];
   uint16_t type;
   uint16_t mtu;
-  uint16_t flags;
+  uint16_t flags; // device flags
   uint16_t hlen;
   uint16_t alen;
   uint8_t addr[NET_DEVICE_ADDR_LEN];
@@ -37,7 +37,7 @@ struct net_device {
     uint8_t peer[NET_DEVICE_ADDR_LEN];
     uint8_t broadcast[NET_DEVICE_ADDR_LEN];
   };
-  struct net_device_ops *ops;
+  struct net_device_ops *ops; // device operations
   void *priv;
 };
 
@@ -50,6 +50,7 @@ struct net_device_ops {
 extern struct net_device *net_device_alloc();
 extern int net_device_register(struct net_device *dev);
 extern int net_device_output(struct net_device *dev, uint16_t type, const uint8_t *data, size_t len, const void *dst);
+extern int net_input_handler(uint16_t type, const uint8_t *data, size_t len, struct net_device *dev);
 
 extern int net_run();
 extern void net_shutdown();

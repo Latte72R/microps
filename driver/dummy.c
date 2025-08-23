@@ -31,6 +31,7 @@ static struct net_device_ops dummy_ops = {
 struct net_device *dummy_init() {
   struct net_device *dev;
 
+  // デバイスの生成とパラメータの設定
   dev = net_device_alloc();
   if (!dev) {
     errorf("net_device_alloc() failure");
@@ -41,6 +42,8 @@ struct net_device *dummy_init() {
   dev->hlen = 0; /* no header */
   dev->alen = 0; /* no address */
   dev->ops = &dummy_ops;
+
+  // デバイスの登録と割り込みハンドラの設定
   if (net_device_register(dev) == -1) {
     errorf("net_device_register() failure");
     return NULL;
