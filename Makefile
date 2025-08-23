@@ -5,11 +5,9 @@ DRIVERS = driver/dummy.o \
 
 OBJS = util.o \
        net.o \
+       ip.o
 
-TESTS = test/step0.exe \
-        test/step1.exe \
-        test/step2.exe \
-        test/step3.exe \
+TESTS = test/step5.exe
 
 CFLAGS := $(CFLAGS) -g -W -Wall -Wno-unused-parameter -iquote .
 
