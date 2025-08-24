@@ -63,7 +63,7 @@ static void *intr_thread(void *arg) {
   int terminate = 0, sig, err;
   struct irq_entry *entry;
 
-  debugf("star...");
+  debugf("starting...");
   pthread_barrier_wait(&barrier);
   while (!terminate) {
     err = sigwait(&sigmask, &sig);

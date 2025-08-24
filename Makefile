@@ -7,7 +7,7 @@ OBJS = util.o \
        net.o \
        ip.o
 
-TESTS = test/step5.exe
+TESTS = test/step6.exe
 
 CFLAGS := $(CFLAGS) -g -W -Wall -Wno-unused-parameter -iquote .
 
